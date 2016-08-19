@@ -4,8 +4,7 @@ Created on Aug 4, 2016
 @author: plume
 '''
 from __future__ import print_function
-from setuptools import setup, find_packages
-from setuptools.command.test import test as TestCommand
+from distutils.core import setup
 import io
 import os
 
@@ -22,7 +21,7 @@ def read(*filenames, **kwargs):
             buf.append(f.read())
     return sep.join(buf)
 
-long_description = read('README.md') #, 'CHANGES.txt')
+long_description = read('README.md') #, 'CHANGES.txt') 
 
 setup(
     name='flowsim',
