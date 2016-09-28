@@ -42,6 +42,8 @@ class TestAgents(unittest.TestCase):
         self.assertRaises(FlowMessageDeliveryException, agent.deliver, message) 
         
     def test_all_properties_matching_agent_accepting_conditions(self):
+        """A AllPropertiesMatchingAgent will accept all Messages
+        when the message properties are exactly the same as the ones from the agent."""
         message_good = FlowMessage(DATES_MIN[1], properties={"a":1, "b":"abc"})
         message_wrong = FlowMessage(DATES_MIN[1], properties={"a":1, "b":"abcd"})
         message_bad_missing  = FlowMessage(DATES_MIN[1], properties={"a":1 })
@@ -53,6 +55,8 @@ class TestAgents(unittest.TestCase):
         self.assertFalse(agent.can_receive(message_wrong))
         
     def test_all_message_properties_matching_agent_accepting_conditions(self):
+        """A AllMessagePropertiesMatchingAgent will accept all Messages
+        when the message properties have their equivalent in the agent."""
         message_good = FlowMessage(DATES_MIN[1], properties={"a":1, "b":"abc"})
         message_wrong = FlowMessage(DATES_MIN[1], properties={"a":1, "b":"abcd"})
         message_good_missing  = FlowMessage(DATES_MIN[1], properties={"a":1 })

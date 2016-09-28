@@ -28,8 +28,8 @@ class TestComplexDistributionTimeBrokerMessages(unittest.TestCase):
         
     def test_simple_echo(self):
         """Sending a message (dated before the agent) to an "echo" agent will make the same message come back, dated as the agent is."""
-        message = FlowMessage(DATES_MIN[0])
-        agent=EchoAgent(DATES_MIN[1], broker=self.broker)
+        message = FlowMessage(DATES_MIN[0])                # Message on date 0
+        agent=EchoAgent(DATES_MIN[1], broker=self.broker)  # Agent  on date 1
         self.broker.add_agent(agent)
         
         self.broker.post_message(message)   
@@ -41,7 +41,8 @@ class TestComplexDistributionTimeBrokerMessages(unittest.TestCase):
                 
     def test_time_delta_agent(self):
         """Sending a message (dated before the agent) to an "echo" agent that has a delta time 
-        will make the same message come back, dated as the agent is + delta time."""
+        will make the same message come back, dated as the agent is + delta time.
+        The delta is here to enforce a "work" delay on the echo agent."""
         message = FlowMessage(DATES_MIN[0])
         agent=EchoAgent(DATES_MIN[1], broker=self.broker, delta=DELTA_10_s)
         self.broker.add_agent(agent)
