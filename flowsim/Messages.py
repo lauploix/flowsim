@@ -11,5 +11,4 @@ class FlowMessage(object):
     Messages are also created by agents and sent to the TimeBroker for further delivery""" 
     def __init__(self, when, properties={}):
         self.when=when # The date when the message is available to retrieve
-        self.properties=properties
 
