@@ -1,5 +1,11 @@
-jupyterlab==3.0.7
+jupyterlab==4.1.2
 setuptools==69.0.2 #required by simpy
 six==1.16.0 #required by setuptools
 simpy==4.1.1
 matplotlib==3.8.3
+pytest==8.0.2
+ipywidgets==8.1.2
+numpy==1.26
+scipy==1.12.0
+nxsim==0.1.2
+networkx==3.2.1
