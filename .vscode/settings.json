@@ -1,0 +1,21 @@
+{
+    "runOnSave.commands": [
+        
+
+        {
+            "match": ".*\\.py$",
+            "command": "tox",
+            "runIn": "terminal"
+        },
+        {
+            "match": ".*\\.json$",
+            "command": "tox",
+            "runIn": "terminal"
+        },
+        {
+            "match": "tox\\.ini$",
+            "command": "tox",
+            "runIn": "terminal"
+        }
+    ]
+}
